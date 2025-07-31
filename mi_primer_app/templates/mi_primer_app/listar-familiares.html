@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Familiares</title>
+</head>
+<body style="margin: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(to right, #e0f7fa, #ffffff); color: #333;">
+
+  <!-- Header -->
+  <header style="background-color: #26a69a; padding: 20px; text-align: center; color: white;">
+    <h1 style="margin: 0; font-size: 2.5em;">Lista de Familiares</h1>
+  </header>
+
+  <!-- Main content -->
+  <main style="padding: 40px;">
+    <ul style="list-style: none; padding: 0; max-width: 800px; margin: 0 auto;">
+      {% for familiar in familiares %}
+        <li style="background-color: #fefefe; margin-bottom: 20px; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          <p style="margin: 0; font-size: 1.2em;">
+            <strong style="color: #00796b;">{{ familiar.nombre }}</strong> — {{ familiar.parentesco }} — {{ familiar.edad }} años
+          </p>
+          <p style="margin: 5px 0 0; color: #555;">Nacido el {{ familiar.fecha_nacimiento }}</p>
+        </li>
+      {% empty %}
+        <li style="text-align: center; font-size: 1.2em; color: #777;">No hay familiares cargados.</li>
+      {% endfor %}
+    </ul>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: #eeeeee; text-align: center; padding: 20px; font-size: 0.9em; color: #555;">
+    &copy; 2025 Sistema de Gestión Familiar
+  </footer>
+
+</body>
+</html>
