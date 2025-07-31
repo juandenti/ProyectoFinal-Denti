@@ -6,9 +6,9 @@ pip install django
 
 Proyecto hecho en django, para ejecutar:
 
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+- python manage.py makemigrations
+- python manage.py migrate
+- python manage.py runserver
 
 Luego, los pasos recomendados para la navegación de la web son los siguientes:
 
