@@ -1,0 +1,25 @@
+{% extends "padre.html" %}
+
+{% block title %} Listar Curso {% endblock title %}
+
+{% block content %}
+
+<h2> Buscar perfume </h2>
+
+<form method = "GET" action= "{% url 'buscar-perfumes' %} ">
+    <input type = "text" name = "nombre" placeholder = "Buscar perfume.."
+    value = "{{ nombre }}">
+    <button type = "submit"> Buscar </button>
+
+</form>
+
+<ul>
+    {% for perfume in perfumes %}
+    <li>{{perfume.nombre}}</li>
+    {% empty %}
+    <li> No hay perfumes disponibles.</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}
