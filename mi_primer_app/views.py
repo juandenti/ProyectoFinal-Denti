@@ -1,7 +1,9 @@
 from django.shortcuts import redirect, render
+from django.urls import reverse_lazy
 from django.http import HttpResponse
-from .models import Perfume, Marca, Vela
-from .forms import PerfumeForm, MarcaForm, VelaForm
+from .models import Perfume, Marca, Vela, Perfumista
+from .forms import PerfumeForm, MarcaForm, VelaForm, PerfumistaForm
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 # Create your views here.
 
@@ -62,3 +64,33 @@ def buscar_perfumes(request):
         nombre = request.GET.get('nombre' , '')
         perfumes = Perfume.objects.filter(nombre__icontains=nombre)
         return render(request, 'mi_primer_app/buscar-perfumes.html', {"perfumes":perfumes, "nombre":nombre})  
+
+
+# Vistas basadas en clases para Perfumista
+
+class PerfumistaListView(ListView):
+    model = Perfumista
+    template_name = 'mi_primer_app/listar-perfumistas.html'
+    context_object_name = "perfumistas"
+
+class PerfumistaCreateView(CreateView):
+    model = Perfumista
+    form_class = PerfumistaForm
+    template_name = 'mi_primer_app/crear-perfumistas.html'
+    success_url = reverse_lazy('listar-perfumistas')
+
+class PerfumistaUpdateView(UpdateView):
+    model = Perfumista
+    form_class = PerfumistaForm
+    template_name = 'mi_primer_app/crear-perfumistas.html'
+    success_url = reverse_lazy('listar-perfumistas')
+
+class PerfumistaDetailView(DetailView):
+    model = Perfumista
+    template_name = 'mi_primer_app/detalle-perfumistas.html'
+    context_object_name = "perfumista"
+
+class PerfumistaDeleteView(DeleteView):
+    model = Perfumista
+    template_name = 'mi_primer_app/eliminar-perfumistas.html'
+    success_url = reverse_lazy('listar-perfumistas')

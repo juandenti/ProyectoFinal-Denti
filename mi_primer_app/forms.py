@@ -1,4 +1,5 @@
 from django import forms
+from .models import Perfumista
     
 class PerfumeForm(forms.Form):
     nombre = forms.CharField(max_length=100, label='Nombre del Perfume')
@@ -25,3 +26,8 @@ class VelaForm(forms.Form):
 
     def __str__(self):
         return self.nombre
+    
+class PerfumistaForm(forms.ModelForm):
+    class Meta:
+        model = Perfumista
+        fields = ['nombre' , 'edad', 'biografia']

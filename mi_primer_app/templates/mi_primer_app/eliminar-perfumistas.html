@@ -1,0 +1,15 @@
+{% extends "padre.html" %}
+
+{% block content %}
+
+<h1> Estas seguro de que deseas eliminar este perfumista? </h1>
+<p> {{ object.nombre }} {{ object.edad }} </p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type = "submit"> Eliminar </button>
+</form>
+
+<a href ="{% url 'listar-perfumistas' %}"> Cancelar </a>
+
+{% endblock %}
