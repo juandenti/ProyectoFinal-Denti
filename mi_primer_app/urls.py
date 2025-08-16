@@ -8,7 +8,7 @@ urlpatterns = [
     path('cargar-marca/', views.cargar_marca, name='cargar-marca'),
     path('cargar-vela/', views.cargar_vela, name='cargar-vela'),
     path('buscar-perfumes/', views.buscar_perfumes, name="buscar-perfumes"),
-
+    path('about/', views.about, name="about"),
 
     #Vistas basadas en clases
 

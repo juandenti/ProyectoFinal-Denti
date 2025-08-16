@@ -1,0 +1,32 @@
+{% extends "padre.html" %}
+
+{% block title %} Subir Avatar {% endblock title %}
+
+{% block content %}
+
+<div class="container" style="max-width: 400px; margin: 50px auto; padding: 30px; background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;">
+
+    <h2 class="mb-4" style="color: #333;">Actualizar Avatar</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="mb-3 text-start">
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="text-danger" style="font-size: 0.875rem;">{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary w-100" style="padding: 10px; font-size: 1rem; border-radius: 6px;">Subir Avatar</button>
+    </form>
+
+</div>
+
+{% endblock %}
