@@ -12,12 +12,12 @@ Proyecto hecho en django, para ejecutar:
 
 Luego, los pasos recomendados para la navegación de la web son los siguientes:
 
-- cargar-perfume.html
-- cargar-marca.html
-- cargar-vela.html
+- Crear un usuario
+- Pueden cargarle un avatar
+- Comenzar a usar las herramientas como cargar perfumes, cargar perfumistas, cargar marcas.
 
-(Si no conocen ninguna pueden inventar uno)
+(Si no conocen ninguno pueden inventar uno)
 
-Y finalmente, pueden buscar lo cargado en:
+# Video
 
-- buscar-perfumes.html
+Link al video del sitio web: https://drive.google.com/file/d/1a9Zdvv1BioXFlYwKz824_6iB9bTJtflV/view?usp=sharing
